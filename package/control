@@ -1,0 +1,9 @@
+Package: mistlogic
+Version: 0.1-1
+Priority: optional
+Section: python
+Architecture: all
+Maintainer: Jesus Flores <joy_warmgun@hotmail.com>
+Depends: mongodb, python-pymongo 
+Description: MistLogic
+
