@@ -4,6 +4,6 @@ Priority: optional
 Section: python
 Architecture: all
 Maintainer: Jesus Flores <joy_warmgun@hotmail.com>
-Depends: mongodb, python-pymongo 
+Depends: mongodb, python-pymongo, wpasupplicant, hostapd, isc-dhcp-server
 Description: MistLogic
 
