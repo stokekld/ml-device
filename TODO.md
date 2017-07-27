@@ -1,4 +1,4 @@
 TO DO
 
-* Habilitar servico de bd con mongo
-* Desarrollar módulo de red
+- [x] Habilitar servico de bd con mongo
+- [x] Desarrollar módulo de red
