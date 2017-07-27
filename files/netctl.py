@@ -22,10 +22,6 @@ dhcp.stopClient()
 
 ip.flush()
 
-network.setProp('ap', False)
-network.setProp('ssid', "COORD")
-network.setProp('passphrase', "$i$2016admin")
-
 if network.getProp('ap'):
     ip.set("192.168.1.1", "24", "192.168.1.255")
     hostap.start()
