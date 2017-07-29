@@ -1,17 +1,17 @@
 from mistlogic.gpio import Gpio
-import RPi.GPIO as GPIO
+from wiringX import gpio as wx
 import atexit
 import os
 
-GPIO.setmode(GPIO.BCM)
+wx.setup()
 
 gpio = Gpio({
     'manual': {
-        'value': GPIO.LOW,
+        'value': wx.LOW,
         'pin': 17
         },
     'auto': {
-        'value': GPIO.LOW,
+        'value': wx.LOW,
         'pin': 27
         }
     })

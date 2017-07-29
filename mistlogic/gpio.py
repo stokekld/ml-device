@@ -1,5 +1,5 @@
 from mistlogic.config import *
-import RPi.GPIO as GPIO
+from wiringX import gpio as wx
 
 class Gpio(object):
     def __init__(self, props):
@@ -10,13 +10,13 @@ class Gpio(object):
         
         for key in self.__props:
             prop = self.__gpio.getProp(key)
-            GPIO.setup(prop['pin'], GPIO.OUT)
-            GPIO.output(prop['pin'], prop['value'])
+            wx.pinMode(prop['pin'], wx.OUTPUT)
+            wx.digitalWrite(prop['pin'], prop['value'])
 
     def setValue(self, name, value):
         prop = self.__props[name]
         prop['value'] = value
-        GPIO.output(prop['pin'], value)
+        wx.digitalWrite(prop['pin'], value)
         self.__gpio.setProp(name, prop)
 
     def high(self, name):
