@@ -8,19 +8,20 @@ wx.setup()
 gpio = Gpio({
     'manual': {
         'value': wx.LOW,
-        'pin': 17
+        'pin': wx.PIN0
         },
     'auto': {
         'value': wx.LOW,
-        'pin': 27
+        'pin': wx.PIN2
         }
     })
 
 gpio.declare()
 
-thefifo = '/etc/mistlogic/gpio.fifo'
+thefifo = '/etc/mistlogic/gpio/gpio.fifo'
 
-os.mkfifo(thefifo)
+if not os.path.isfile(thefifo):
+    os.mkfifo(thefifo)
 
 def cleanup():
     os.remove(thefifo)

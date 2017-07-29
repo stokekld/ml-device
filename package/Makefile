@@ -16,7 +16,7 @@ $(PACKAGE):
 	mkdir -p $(PROJECT_DIR)
 	cp control $(DEBIAN_DIR)
 	cp -r ../mistlogic/ $(PYTHON_DIST)
-	cp ../files/* $(PROJECT_DIR)
+	cp -r ../modules/* $(PROJECT_DIR)
 
 	$(C) $(PACKAGE)
 
