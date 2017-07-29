@@ -6,4 +6,4 @@ then
     exit 1
 fi
 
-echo $1,$2 > /etc/mistlogic/gpio.fifo
+echo $1,$2 > /etc/mistlogic/gpio/gpio.fifo

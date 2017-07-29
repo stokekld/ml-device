@@ -20,10 +20,10 @@ class Gpio(object):
         self.__gpio.setProp(name, prop)
 
     def high(self, name):
-        self.setValue(name, GPIO.HIGH)
+        self.setValue(name, wx.HIGH)
 
     def low(self, name):
-        self.setValue(name, GPIO.LOW)
+        self.setValue(name, wx.LOW)
 
     def toggle(self, name):
         prop = self.__props[name]

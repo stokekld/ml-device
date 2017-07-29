@@ -10,7 +10,7 @@ network = Config('network', {
     'passphrase': ""
 })
 
-hostap = HostAp('/etc/mistlogic/hostapd.conf')
+hostap = HostAp('/etc/mistlogic/network/hostapd.conf')
 wpa = Wpa('wlan0')
 dhcp = Dhcp('wlan0')
 ip = Ip('wlan0')
@@ -25,7 +25,7 @@ ip.flush()
 if network.getProp('ap'):
     ip.set("192.168.1.1", "24", "192.168.1.255")
     hostap.start()
-    dhcp.startServer('/etc/mistlogic/dhcpd.conf')
+    dhcp.startServer('/etc/mistlogic/network/dhcpd.conf')
 else:
     wpa.passphrase(network.getProp('ssid'), network.getProp('passphrase'))
     wpa.start()
