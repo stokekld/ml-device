@@ -1,7 +1,6 @@
 from mistlogic.gpio import Gpio
 import RPi.GPIO as GPIO
-import atexit
-import os
+import os, stat, atexit
 
 GPIO.setmode(GPIO.BCM)
 
@@ -20,8 +19,10 @@ gpio.declare()
 
 thefifo = '/etc/mistlogic/gpio/gpio.fifo'
 
-if not os.path.isfile(thefifo):
+try:
     os.mkfifo(thefifo)
+except:
+    print "ya existe"
 
 def cleanup():
     os.remove(thefifo)
