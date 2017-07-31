@@ -7,21 +7,12 @@ GPIO.setmode(GPIO.BCM)
 
 gpio = Gpio({
     'manual': {
-<<<<<<< HEAD:files/gpiod.py
         'value': GPIO.LOW,
         'pin': 17
         },
     'auto': {
         'value': GPIO.LOW,
         'pin': 27
-=======
-        'value': wx.LOW,
-        'pin': wx.PIN0
-        },
-    'auto': {
-        'value': wx.LOW,
-        'pin': wx.PIN2
->>>>>>> 505ede2... Organizando archivos:modules/gpio/gpiod.py
         }
     })
 
